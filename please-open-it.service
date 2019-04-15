@@ -1,0 +1,12 @@
+[Unit]
+Description=Please Open It Service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=__WORKING_DIRECTORY__
+ExecStart='/home/pi/start.sh'
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target
