@@ -4,7 +4,7 @@ gpio write 6 0;
 while : ; do
   read token
   token=$(echo $token | cut -d':' -f2)
-  httpcode=$(curl -s -o /dev/null -w "%{http_code}" https://access.please-open.it/access/ -H 'Authorization: $token' -H 'doorId: <doorId>' )
+  httpcode=$(curl -s -o /dev/null -w "%{http_code}" https://access.please-open.it/access/ -H 'Authorization: $token' -H 'controllerId: <doorId>' )
 
   if [ $httpcode = 200 ]; then
       echo "access OK"
